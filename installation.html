@@ -73,20 +73,29 @@ for more details.</p>
 </li>
 </ol>
 <ol class="arabic" start="3">
-<li><p class="first">Create a new Conda environment (e.g. <code class="code docutils literal"><span class="pre">pyxrf-env</span></code>) with Python 3.6 or 3.7:</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pyxrf</span><span class="o">-</span><span class="n">env</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span>
+<li><p class="first">Install PyXRF from <code class="code docutils literal"><span class="pre">conda-forge</span></code> or <code class="code docutils literal"><span class="pre">nsls2forge</span></code> Anaconda channels.</p>
+<p>PyXRF is currently available from the <code class="code docutils literal"><span class="pre">conda-forge</span></code> Anaconda channel. Create new
+Conda environment:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pyxrf</span><span class="o">-</span><span class="n">env</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
-</li>
-<li><p class="first">Activate the created Conda environment (in our example <code class="code docutils literal"><span class="pre">pyxrf-env</span></code>):</p>
+<p>Activate the new environment:</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">pyxrf</span><span class="o">-</span><span class="n">env</span>
 </pre></div>
 </div>
-</li>
-<li><p class="first">Install PyXRF in the active Conda environment (in our example <code class="code docutils literal"><span class="pre">pyxrf-env</span></code>):</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pyxrf</span> <span class="n">atom</span><span class="o">=</span><span class="mf">0.4</span><span class="o">.</span><span class="mi">3</span> <span class="o">-</span><span class="n">c</span> <span class="n">nsls2forge</span>
+<p>Install PyXRF:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pyxrf</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
+<p>PyXRF package is also maintained at the <code class="code docutils literal"><span class="pre">nsls2forge</span></code> Anaconda channel.
+Installation from <code class="code docutils literal"><span class="pre">nsls2forge</span></code> involves similar steps:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pyxrf</span><span class="o">-</span><span class="n">env</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">pyxrf</span><span class="o">-</span><span class="n">env</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">pyxrf</span> <span class="o">-</span><span class="n">c</span> <span class="n">nsls2forge</span>
+</pre></div>
+</div>
+<p>It is not recommended to mix packages from <code class="code docutils literal"><span class="pre">conda-forge</span></code> channel and <code class="code docutils literal"><span class="pre">nsls2forge</span></code>/<code class="code docutils literal"><span class="pre">defaults</span></code>
+channels in the same environment, since they may be incompatible.</p>
 </li>
 </ol>
 <div class="section" id="starting-pyxrf">
@@ -118,7 +127,14 @@ for more details.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Update PyXRF by typing:</p>
+</ol>
+<ol class="arabic" start="4">
+<li><p class="first">Update PyXRF from the same Anaconda channel (<code class="code docutils literal"><span class="pre">conda-forge</span></code> or <code class="code docutils literal"><span class="pre">nsls2forge</span></code>) that
+was used for the original PyXRF installation:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">pyxrf</span> <span class="n">scikit</span><span class="o">-</span><span class="n">beam</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+<p>or</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">pyxrf</span> <span class="n">scikit</span><span class="o">-</span><span class="n">beam</span> <span class="o">-</span><span class="n">c</span> <span class="n">nsls2forge</span>
 </pre></div>
 </div>

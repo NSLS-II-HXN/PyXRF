@@ -31,25 +31,39 @@ identical for all supported OS.
       If PyXRF is installed in an older Conda environment then different command syntax 
       must be used on some platforms (particularly Windows). Refer to the Conda documentation
       for more details.
-   
-3. Create a new Conda environment (e.g. :code:`pyxrf-env`) with Python 3.6 or 3.7:
+
+3. Install PyXRF from :code:`conda-forge` or :code:`nsls2forge` Anaconda channels.
+
+   PyXRF is currently available from the :code:`conda-forge` Anaconda channel. Create new
+   Conda environment:
 
    .. code:: python
- 
-       conda create -n pyxrf-env python=3.7
 
-4. Activate the created Conda environment (in our example :code:`pyxrf-env`):
+       conda create -n pyxrf-env python=3.7 -c conda-forge
+
+   Activate the new environment:
 
    .. code:: python
 
        conda activate pyxrf-env
 
-5. Install PyXRF in the active Conda environment (in our example :code:`pyxrf-env`):
+   Install PyXRF:
 
    .. code:: python
 
-       conda install pyxrf atom=0.4.3 -c nsls2forge
+       conda install pyxrf -c conda-forge
 
+   PyXRF package is also maintained at the :code:`nsls2forge` Anaconda channel.
+   Installation from :code:`nsls2forge` involves similar steps:
+
+   .. code:: python
+ 
+       conda create -n pyxrf-env python=3.7
+       conda activate pyxrf-env
+       conda install pyxrf -c nsls2forge
+
+   It is not recommended to mix packages from :code:`conda-forge` channel and :code:`nsls2forge`/:code:`defaults`
+   channels in the same environment, since they may be incompatible.
 
 Starting PyXRF
 ==============
@@ -84,7 +98,14 @@ Updating PyXRF
        conda activate pyxrf-env
 
 
-3. Update PyXRF by typing:
+4. Update PyXRF from the same Anaconda channel (:code:`conda-forge` or :code:`nsls2forge`) that
+   was used for the original PyXRF installation:
+
+   .. code:: python
+
+       conda update pyxrf scikit-beam -c conda-forge
+
+   or
 
    .. code:: python
 
